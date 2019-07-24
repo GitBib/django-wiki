@@ -35,6 +35,7 @@ from wiki.core import permissions
 from wiki.core.diff import simple_merge
 from wiki.core.plugins.base import PluginSettingsFormMixin
 from wiki.editors import getEditor
+from martor.fields import MartorFormField
 
 from .forms_account_handling import UserCreationForm, UserUpdateForm
 
@@ -211,7 +212,7 @@ class MoveForm(forms.Form):
 class EditForm(forms.Form, SpamProtectionMixin):
 
     title = forms.CharField(label=_('Title'),)
-    content = forms.CharField(
+    content = MartorFormField(
         label=_('Contents'),
         required=False,
         widget=getEditor().get_widget())  # @UndefinedVariable
@@ -355,7 +356,7 @@ class CreateForm(forms.Form, SpamProtectionMixin):
         help_text=_(
             "This will be the address where your article can be found. Use only alphanumeric characters and - or _.<br>Note: If you change the slug later on, links pointing to this article are <b>not</b> updated."),
         max_length=models.URLPath.SLUG_MAX_LENGTH)
-    content = forms.CharField(
+    content = MartorFormField(
         label=_('Contents'),
         required=False,
         widget=getEditor().get_widget())  # @UndefinedVariable
