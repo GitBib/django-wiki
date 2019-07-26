@@ -28,10 +28,10 @@ install_requirements = [
     "bleach>=2.1,<2.2",
     "Pillow",
     "django-nyt>=1.1.3,<1.2",
-    "django-mptt>=0.9,<0.10",
+    "django-mptt>=0.10",
     "django-sekizai>=0.10",
     "sorl-thumbnail>=12,<13",
-    "Markdown>=3.0.0,<3.1.0",
+    "Markdown>=3.1.0",
     "martor>=1.4.1"
 ]
 
