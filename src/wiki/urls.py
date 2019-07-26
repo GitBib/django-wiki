@@ -7,7 +7,7 @@ from wiki.views import accounts, article, deleted_list
 
 urlpatterns = [
     url(r'^', sites.site.urls),
-    url('^martor/$', include('martor.urls'))
+    url('^martor/', include('martor.urls'))
 ]
 
 
